@@ -2,6 +2,7 @@
 
 This repository contains **six output files** and **MATLAB code** from the research project:  
 **"The Role of Mesoscale Eddy Stirring and Microscale Turbulence in Sustaining Biological Production in Subtropical Gyres."**
+Co-authors: K. Oglethorpe (ko389@cam.ac.uk), Dr C. Spingys, Dr B. Fernández-Castro, Prof. A. C. Naveira Garabato, Prof. R. G. Williams.
 
 ## **Description**
 The six output files (.mat) contain estimates of **nitrate supply to the Winter Mixed Layer (WML) and Thermocline (THERM)** by:
