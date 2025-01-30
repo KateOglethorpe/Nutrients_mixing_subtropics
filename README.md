@@ -5,13 +5,12 @@ This repository contains **six output files** and **MATLAB code** from the resea
 Co-authors: K. Oglethorpe (ko389@cam.ac.uk), Dr C. Spingys, Dr B. Fernández-Castro, Prof. A. C. Naveira Garabato, Prof. R. G. Williams.
 
 ## **Description**
-The six output files (.mat) contain estimates of **nitrate supply to the Winter Mixed Layer** (`WML`) **and Thermocline** (`THERM`) by:
+The six output files (.mat) contain estimates of **nitrate supply to the winter mixed layer** (`WML`) **and thermocline** by:
 - **Mesoscale eddy stirring**, derived from the convergences of isopycnal diffusive nitrate fluxes (`F_iso_diff`).
 - **Microscale turbulence**, derived from the sum of convergences of diapycnal diffusive nitrate fluxes (`F_dia_diff`) and diapycnal advective nitrate fluxes (`F_dia_adv`).
 
 Units: mol N m⁻² yr⁻¹
 
-## **Files**
 | File Name               | Description |
 |-------------------------|-------------|
 | `wml_F_iso_diff.mat`    | Isopycnal diffusive nitrate supply to the WML |
@@ -20,6 +19,8 @@ Units: mol N m⁻² yr⁻¹
 | `therm_F_iso_diff.mat`  | Isopycnal diffusive nitrate supply to the Thermocline |
 | `therm_F_dia_diff.mat`  | Diapycnal diffusive nitrate supply to the Thermocline |
 | `therm_F_dia_adv.mat`   | Diapycnal advective nitrate supply to the Thermocline |
+
+The three MATLAB scripts (.m) files contain code to calculate these rates of nitrate supply from global climatologies and estimates (`Calculations.m`) and plot the paper figures (`North_Atlantic_figures.m` and `Global_figures.m`).
 
 ## **Data Sources**
 This research utilizes publicly available datasets:
