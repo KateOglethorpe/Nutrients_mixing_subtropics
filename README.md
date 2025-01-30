@@ -5,19 +5,21 @@ This repository contains **six output files** and **MATLAB code** from the resea
 Co-authors: K. Oglethorpe (ko389@cam.ac.uk), Dr C. Spingys, Dr B. Fernández-Castro, Prof. A. C. Naveira Garabato, Prof. R. G. Williams.
 
 ## **Description**
-The six output files (.mat) contain estimates of **nitrate supply to the Winter Mixed Layer (WML) and Thermocline (THERM)** by:
+The six output files (.mat) contain estimates of **nitrate supply to the Winter Mixed Layer** (`WML`) **and Thermocline** (`THERM`) by:
 - **Mesoscale eddy stirring**, derived from the convergences of isopycnal diffusive nitrate fluxes (`F_iso_diff`).
 - **Microscale turbulence**, derived from the sum of convergences of diapycnal diffusive nitrate fluxes (`F_dia_diff`) and diapycnal advective nitrate fluxes (`F_dia_adv`).
+
+Units: mol N m⁻² yr⁻¹
 
 ## **Files**
 | File Name               | Description |
 |-------------------------|-------------|
-| `wml_F_iso_diff.mat`    | Isopycnal diffusive nitrate flux convergence in WML |
-| `wml_F_dia_diff.mat`    | Diapycnal diffusive nitrate flux convergence in WML |
-| `wml_F_dia_adv.mat`     | Diapycnal advective nitrate flux convergence in WML |
-| `therm_F_iso_diff.mat`  | Isopycnal diffusive nitrate flux convergence in Thermocline |
-| `therm_F_dia_diff.mat`  | Diapycnal diffusive nitrate flux convergence in Thermocline |
-| `therm_F_dia_adv.mat`   | Diapycnal advective nitrate flux convergence in Thermocline |
+| `wml_F_iso_diff.mat`    | Isopycnal diffusive nitrate supply to the WML |
+| `wml_F_dia_diff.mat`    | Diapycnal diffusive nitrate supply to the WML |
+| `wml_F_dia_adv.mat`     | Diapycnal advective nitrate supply to the WML |
+| `therm_F_iso_diff.mat`  | Isopycnal diffusive nitrate supply to the Thermocline |
+| `therm_F_dia_diff.mat`  | Diapycnal diffusive nitrate supply to the Thermocline |
+| `therm_F_dia_adv.mat`   | Diapycnal advective nitrate supply to the Thermocline |
 
 ## **Data Sources**
 This research utilizes publicly available datasets:
