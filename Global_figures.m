@@ -76,14 +76,6 @@ load chl.mat
 chl(chl == 99999) = NaN;
 chl = flipud(chl);
 
-chl_Feb_paper = load('Chl_Feb_Aqua_Modis.txt');
-chl_Feb_paper(chl_Feb_paper == 99999) = NaN;
-chl_Feb_paper = flipud(chl_Feb_paper);
-
-chl_Feb = load('Feb_2021.txt');
-chl_Feb(chl_Feb == 99999) = NaN;
-chl_Feb = flipud(chl_Feb);
-
 %define red box:
 x_lower_lim = -80.5
 x_upper_lim = -10.5
@@ -149,68 +141,6 @@ set(gcf,'color','w')
 %c.Label.String = ''
 set(gca,'Fontsize',14)
 title('Yellow marks annual mean 2021 chl-a < 0.1 mg m^-^3')
-
-
-%over chl
-figure
-m_proj('miller');
-m_pcolor(glob_lon, glob_lat, chl_Feb)
-hold on
-m_line(NA_lon_chl, NA_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NA_lon_chl, NA_lat_chl,'single',30,2,'color','k'); 
-m_line(SA_lon_chl, SA_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SA_lon_chl, SA_lat_chl,'single',30,2,'color','k'); 
-m_line(I_lon_chl, I_lat_chl, 'color','k','linewi',0.3)
-m_hatch(I_lon_chl, I_lat_chl,'single',30,2,'color','k'); 
-m_line(NP1_lon_chl, NP1_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NP1_lon_chl, NP1_lat_chl,'single',30,2,'color','k'); 
-m_line(SP1_lon_chl, SP1_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SP1_lon_chl, SP1_lat_chl,'single',30,2,'color','k'); 
-m_line(NP2_lon_chl, NP2_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NP2_lon_chl, NP2_lat_chl,'single',30,2,'color','k'); 
-m_line(SP2_lon_chl, SP2_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SP2_lon_chl, SP2_lat_chl,'single',30,2,'color','k');
-m_line([x_lower_lim; x_upper_lim; x_upper_lim; x_lower_lim; x_lower_lim],[y_upper_lim; y_upper_lim; y_lower_lim; y_lower_lim; y_upper_lim],'color','r','linewi',1)
-m_grid('fontsize',14);
-m_coast('color','k')
-set(gcf,'color','w')
-c = colorbar
-cmocean('algae')
-caxis([0 0.6])
-c.Label.String = 'Chl-a concentration (mg m^-^3)'
-set(gca,'Fontsize',14)
-title('Chl Feb 2021')
-
-%over chl
-figure
-m_proj('miller');
-m_pcolor(glob_lon, glob_lat, chl_Feb_paper)
-hold on
-m_line(NA_lon_chl, NA_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NA_lon_chl, NA_lat_chl,'single',30,2,'color','k'); 
-m_line(SA_lon_chl, SA_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SA_lon_chl, SA_lat_chl,'single',30,2,'color','k'); 
-m_line(I_lon_chl, I_lat_chl, 'color','k','linewi',0.3)
-m_hatch(I_lon_chl, I_lat_chl,'single',30,2,'color','k'); 
-m_line(NP1_lon_chl, NP1_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NP1_lon_chl, NP1_lat_chl,'single',30,2,'color','k'); 
-m_line(SP1_lon_chl, SP1_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SP1_lon_chl, SP1_lat_chl,'single',30,2,'color','k'); 
-m_line(NP2_lon_chl, NP2_lat_chl, 'color','k','linewi',0.3)
-m_hatch(NP2_lon_chl, NP2_lat_chl,'single',30,2,'color','k'); 
-m_line(SP2_lon_chl, SP2_lat_chl, 'color','k','linewi',0.3)
-m_hatch(SP2_lon_chl, SP2_lat_chl,'single',30,2,'color','k');
-m_line([x_lower_lim; x_upper_lim; x_upper_lim; x_lower_lim; x_lower_lim],[y_upper_lim; y_upper_lim; y_lower_lim; y_lower_lim; y_upper_lim],'color','r','linewi',1)
-m_grid('fontsize',14);
-m_coast('color','k')
-set(gcf,'color','w')
-c = colorbar
-cmocean('algae')
-caxis([0 0.6])
-c.Label.String = 'Chl-a concentration (mg m^-^3)'
-set(gca,'Fontsize',14)
-title('Chl Feb 2021 (paper)')
-
 
 %% Global supply maps
 
