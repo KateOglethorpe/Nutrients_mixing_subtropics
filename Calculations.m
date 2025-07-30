@@ -44,6 +44,11 @@ chl = load('Chl_Feb_Aqua_Modis.txt')
 chl(chl == 99999) = NaN;
 chl = flipud(chl);
 
+% This is only plotting February Aqua Modis - I actually used annual -
+% check this. 
+
+
+
 %% Edit data
 
 %reorder all dimensions excluding K_iso

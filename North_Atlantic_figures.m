@@ -64,7 +64,7 @@ load SP2_lon_chl.mat
 %over chl
 figure
 m_proj('miller');
-m_pcolor(glob_lon, glob_lat, chl_final)
+m_pcolor(glob_lon, glob_lat, chl)
 hold on
 m_line(NA_lon_chl, NA_lat_chl, 'color','k','linewi',0.3)
 m_hatch(NA_lon_chl, NA_lat_chl,'single',30,2,'color','k'); 
@@ -86,9 +86,40 @@ m_coast('color','k')
 set(gcf,'color','w')
 c = colorbar
 cmocean('algae')
-caxis([0 6e4])
+caxis([0 0.5])
 c.Label.String = 'Chl-a concentration (mg m^-^3)'
 set(gca,'Fontsize',9)
+
+%over 1997-2002 chl
+figure
+m_proj('miller');
+m_pcolor(glob_lon, glob_lat, annual_mean(:,:,years==1997)')
+hold on
+m_line(NA_lon_chl, NA_lat_chl, 'color','k','linewi',0.3)
+m_hatch(NA_lon_chl, NA_lat_chl,'single',30,2,'color','k'); 
+m_line(SA_lon_chl, SA_lat_chl, 'color','k','linewi',0.3)
+m_hatch(SA_lon_chl, SA_lat_chl,'single',30,2,'color','k'); 
+m_line(I_lon_chl, I_lat_chl, 'color','k','linewi',0.3)
+m_hatch(I_lon_chl, I_lat_chl,'single',30,2,'color','k'); 
+m_line(NP1_lon_chl, NP1_lat_chl, 'color','k','linewi',0.3)
+m_hatch(NP1_lon_chl, NP1_lat_chl,'single',30,2,'color','k'); 
+m_line(SP1_lon_chl, SP1_lat_chl, 'color','k','linewi',0.3)
+m_hatch(SP1_lon_chl, SP1_lat_chl,'single',30,2,'color','k'); 
+m_line(NP2_lon_chl, NP2_lat_chl, 'color','k','linewi',0.3)
+m_hatch(NP2_lon_chl, NP2_lat_chl,'single',30,2,'color','k'); 
+m_line(SP2_lon_chl, SP2_lat_chl, 'color','k','linewi',0.3)
+m_hatch(SP2_lon_chl, SP2_lat_chl,'single',30,2,'color','k'); 
+%m_line([x_lower_lim; x_upper_lim; x_upper_lim; x_lower_lim; x_lower_lim],[y_upper_lim; y_upper_lim; y_lower_lim; y_lower_lim; y_upper_lim],'color','r','linewi',1)
+m_grid('fontsize',9);
+m_coast('color','k')
+set(gcf,'color','w')
+c = colorbar
+cmocean('algae')
+caxis([0 0.01])
+c.Label.String = 'Chl-a concentration (mg m^-^3)'
+set(gca,'Fontsize',9)
+
+
 
 %% Extract data from basin of choice
 
@@ -718,6 +749,20 @@ m_coast('color','k')
 set(gcf,'color','w')
 set(gca,'fontsize',10)
 title('a) N at 200m')
+
+%using Carl's nit_on_dens, 
+
+nexttile(1)
+m_proj('mercator', 'lat', [min_lat max_lat],'long', [min_lon max_lon]);
+m_pcolor(nit_on_dens.lon, nit_on_dens.lat, nit_on_dens.nit(:,:,2)')
+%m_line([-55.5, -55.5], [10, 35],'Color', 'k', 'LineWidth', 2)
+m_line(NA_lon_chl, NA_lat_chl, 'color','k','linewi',0.3)
+m_hatch(NA_lon_chl, NA_lat_chl,'single',30,5,'color','k'); 
+m_grid('fontsize',10);
+m_coast('color','k')
+set(gcf,'color','w')
+set(gca,'fontsize',10)
+title('a) N at 26.5 kg m^-^3')
 
 % Plot 2: Nitrate (mol N m^-^3)
 nexttile(2)
